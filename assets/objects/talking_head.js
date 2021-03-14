@@ -1,12 +1,13 @@
 let talking_head = new blockLike.Sprite({
     width: 123,
     height: 152,
-    image: "assets/textures/talking_head.png"
+    image: "assets/textures/head.png"
 });
 
 talking_head.addTo(stage);
 
 talking_head.whenFlag(function() {
+    this.wait(0.5)
     this.changeX(-900);
     this.changeY(300);
     this.sayWait("Hello!, Welcome to Tree-Run", 1);
