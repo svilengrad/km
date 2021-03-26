@@ -5,13 +5,13 @@ let talking_head = new blockLike.Sprite({
 });
 
 talking_head.addTo(stage);
+talking_head.hide();
 
 talking_head.whenFlag(function() {
-    this.wait(0.5)
-    this.changeX(-900);
-    this.changeY(300);
-    this.sayWait("Hello!, Welcome to Tree-Run", 1);
-    this.sayWait("Press W to walk foward", 2);
-    this.sayWait("Press S to walk backward", 2);
+    this.setX(-900)
+    this.setY(300)
+    this.sayWait("Hello!, Welcome to Tree-Run", 1)
+    this.sayWait("Press W to walk foward", 2)
+    this.sayWait("Press S to walk backward", 2)
     this.sayWait("Press Space to jump", 2)
 });

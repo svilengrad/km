@@ -1,4 +1,5 @@
 let trees1 = []
+let tree_1_Y = []
 
 let tree_1 = new blockLike.Sprite({
     width: 238,
@@ -6,9 +7,11 @@ let tree_1 = new blockLike.Sprite({
     image: "assets/textures/tree.png"
 });
 
-tree_1.addTo(stage)
+tree_1.addTo(stage);
+tree_1.hide();
 
 tree_1.whenFlag(function() {
+    this.show()
     this.wait(0.5)
     this.setX(-650)
     this.setY(300)
@@ -32,10 +35,10 @@ tree_1.whenFlag(function() {
     t1clone3.setSize(185)
     t1clone3.addTo(stage)
 
-    trees1.push(this)
-    trees1.push(t1clone1)
-    trees1.push(t1clone2)
-    trees1.push(t1clone3)
+    trees1.push(this, t1clone1, t1clone2, t1clone3)
+
+    stage.sendSpriteToFront(talking_head)
+    talking_head.show()
 });
 
 tree_1.whenKeyPressed("w", function() {
@@ -44,7 +47,7 @@ tree_1.whenKeyPressed("w", function() {
         t1.changeY(-2)
         t1.changeSize(2)
     })
-})
+});
 
 tree_1.whenKeyPressed("s", function() {
     trees1.forEach(t1 => {
@@ -52,7 +55,7 @@ tree_1.whenKeyPressed("s", function() {
         t1.changeY(2)
         t1.changeSize(-2)
     })
-})
+});
 
 tree_1.whenKeyPressed(" ", function() {
     trees1.forEach(t1 => {
@@ -61,4 +64,4 @@ tree_1.whenKeyPressed(" ", function() {
         t1.changeY(40)
         t1.wait(1)
     })
-})
+});
