@@ -5,8 +5,10 @@ let street_line = new blockLike.Sprite({
 });
 
 street_line.addTo(stage);
+street_line.hide();
 
 street_line.whenFlag(function() {
+    this.show()
     this.wait(0.5)
     this.setY(-165)
 });
