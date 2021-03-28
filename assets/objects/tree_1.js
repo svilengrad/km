@@ -52,7 +52,11 @@ tree_1.whenKeyPressed("w", function() {
 tree_1.whenKeyPressed("s", function() {
     trees1.forEach(t1 => {
         t1.changeX(5)
-        t1.changeY(2)
+        if (t1.Y > 200) {
+            t1.changeY(-2)
+        } else {
+            t1.changeY(2)
+        }
         t1.changeSize(-2)
     })
 });
